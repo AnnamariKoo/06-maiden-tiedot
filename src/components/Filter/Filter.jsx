@@ -2,7 +2,7 @@ const Filter = (props) => {
   return (
     <form className="filterForm">
       Find countries:
-      <input type="text" />
+      <input value={props.searchTerm} onChange={props.handleSearchChange} />
     </form>
   );
 };
