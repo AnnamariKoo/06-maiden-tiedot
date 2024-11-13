@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import Notification from "../Notification/Notification";
+import Country from "../Country/Country";
 
 const FilteredCountries = (props) => {
   const [countryList, setCountryList] = useState([]),
-    [notificationMessage, setNotificationMessage] = useState("");
+    [notificationMessage, setNotificationMessage] = useState(""),
+    [displayOneCountry, setDisplayOneCountry] = useState(false);
 
   useEffect(() => {
     const countryListTemp = props.countries.filter((country) =>
@@ -18,16 +20,24 @@ const FilteredCountries = (props) => {
         setNotificationMessage("Too many matches, specify another filter.");
       }
     }
+    setDisplayOneCountry(false);
+
+    if (countryListTemp.length === 1) {
+      setDisplayOneCountry(true);
+    }
   }, [props.searchTerm]);
 
   return (
     <>
       <Notification message={notificationMessage} />
-      <ol>
-        {countryList.map((country) => (
-          <li key={country.name.common}>{country.name.common}</li>
-        ))}
-      </ol>
+      {displayOneCountry && <Country country={countryList[0]} />}
+      {!displayOneCountry && (
+        <ol>
+          {countryList.map((country) => (
+            <li key={country.name.common}>{country.name.common}</li>
+          ))}
+        </ol>
+      )}
     </>
   );
 };
