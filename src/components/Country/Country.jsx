@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-
 const Country = ({ country }) => {
   const languagesArray = Object.values(country.languages);
   const altText = country.flags.alt;

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Notification from "../Notification/Notification";
 import Country from "../Country/Country";
+import countries from "../../services/countries";
 
 const FilteredCountries = (props) => {
   const [countryList, setCountryList] = useState([]),
@@ -34,7 +35,15 @@ const FilteredCountries = (props) => {
       {!displayOneCountry && (
         <ol>
           {countryList.map((country) => (
-            <li key={country.name.common}>{country.name.common}</li>
+            <li key={country.name.common}>
+              {country.name.common}
+              <button
+                id={country.name.common}
+                onClick={() => props.stateChanger(country.name.common)}
+              >
+                Show
+              </button>
+            </li>
           ))}
         </ol>
       )}
