@@ -15,6 +15,10 @@ const Country = ({ country }) => {
         ))}
       </ul>
       <img className="flag-image" src={pngImg} alt={altText} />
+      <h2>Weather in {country.capital}</h2>
+      <p>temperature</p>
+      <p>tähän sääikoni</p>
+      <p>wind</p>
     </>
   );
 };
