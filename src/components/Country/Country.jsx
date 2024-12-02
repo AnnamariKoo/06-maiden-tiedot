@@ -32,16 +32,20 @@ const Country = ({ country }) => {
 
   return (
     <>
-      <h1>{country.name.common}</h1>
-      <p>Capital: {capital}</p>
-      <p>Area: {country.area}</p>
-      <h4>Languages:</h4>
-      <ul>
-        {languagesArray.map((languages) => (
-          <li key={languages}>{languages}</li>
-        ))}
-      </ul>
-      <img className="flag-image" src={pngImg} alt={altText} />
+      <div className="display-country">
+        <div className="country-info">
+          <h1>{country.name.common}</h1>
+          <p>Capital: {capital}</p>
+          <p>Area: {country.area}</p>
+          <h4>Languages:</h4>
+          <ul>
+            {languagesArray.map((languages) => (
+              <li key={languages}>{languages}</li>
+            ))}
+          </ul>
+        </div>
+        <img className="flag-image" src={pngImg} alt={altText} />
+      </div>
       <h2>Weather in {capital}</h2>
       <p>temperature {(weatherData?.main?.temp - 272.15).toFixed(2)} Celcius</p>
       <img
