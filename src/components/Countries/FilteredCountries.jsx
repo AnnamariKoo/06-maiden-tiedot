@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Notification from "../Notification/Notification";
 import Country from "../Country/Country";
-import countries from "../../services/countries";
 
 const FilteredCountries = (props) => {
   const [countryList, setCountryList] = useState([]),
