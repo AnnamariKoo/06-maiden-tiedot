@@ -14,7 +14,7 @@ const Country = ({ country }) => {
 
   const getWeather = async (capital) => {
     const response = await axios.get(
-      `https://api.openweathermap.Xorg/data/2.5/weather?q=${capital[0]}&appid=${api_key}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${capital[0]}&appid=${api_key}`
     );
     return response.data;
   };
