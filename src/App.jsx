@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import countriesService from "./services/countries.js";
 import Filter from "./components/Filter/Filter.jsx";
-import Notification from "./components/Notification/Notification.jsx";
 import FilteredCountries from "./components/Countries/FilteredCountries.jsx";
 
 const App = () => {
