@@ -9,7 +9,8 @@ const Country = ({ country }) => {
   const capital = country.capital;
 
   //Säätiedot
-  const api_key = import.meta.env.VITE_SOME_KEY;
+  const api_key = import.meta.env.VITE_API_KEY;
+
   const [weatherData, setWeatherData] = useState(null);
 
   const getWeather = async (capital) => {
